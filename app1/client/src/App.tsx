@@ -2,12 +2,45 @@ import React from 'react';
 import logo from './logo.svg';
 import './App.css';
 import {User} from "../../shared/User";
+import {stringify} from "querystring";
 
 interface Props {
     user: User;
 }
 
-export default class App extends React.Component<Props> {
+interface State {
+    user: User;
+}
+
+export default class App extends React.Component<Props, State> {
+    state = {user: {} as User};
+
+    getUser = () => {
+        fetch("/api/getUser")
+            .then(response => response.json())
+            .then((user: User) => {
+                this.setState({user});
+            });
+    };
+
+    getUser2 = () => {
+        fetch("/api/getUser2")
+            .then(response => response.json())
+            .then((user: User) => {
+                this.setState({user});
+            }).catch((error) => {
+            this.setState({user: {} as User});
+        });
+    };
+
+    getUser3 = () => {
+        fetch("/api/getUser3")
+            .then(response => response.json())
+            .then((user: User) => {
+                this.setState({user});
+            });
+    };
+
     render() {
         return (
             <div className="App">
@@ -22,8 +55,11 @@ export default class App extends React.Component<Props> {
                         target="_blank"
                         rel="noopener noreferrer"
                     >
-                        Learn React, user: {this.props.user.name}
+                        Learn React, user: {JSON.stringify(this.state.user.name ? this.state.user: this.props.user)}
                     </a>
+                    <div onClick={this.getUser}>getUser</div>
+                    <div onClick={this.getUser2}>getUser2</div>
+                    <div onClick={this.getUser3}>getUser3</div>
                 </header>
             </div>
         );
