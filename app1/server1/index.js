@@ -2,7 +2,7 @@ const express = require('express');
 var bodyParser = require('body-parser');
 
 const Sequelize = require('sequelize');
-const sequelize = new Sequelize('mysql://root:root@localhost:3306/sequelize');
+const sequelize = new Sequelize('mysql://root:rootroot@localhost:3306/sequelize');
 
 const app = express();
 const userId = 1234;
