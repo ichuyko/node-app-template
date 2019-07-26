@@ -1,6 +1,6 @@
 const express = require('express');
-const mysql = require("mysql");
 var bodyParser = require('body-parser');
+const mysql = require("mysql");
 
 const app = express();
 const userId = 1234;
@@ -141,6 +141,29 @@ app.get('/getUsersById/:id', function(req, res) {
     connection.query(
         "select * from user_1234 where id = ?",
         [req.params.id],
+        function(err, results, fields) {
+            res.send(results);
+        }
+    );
+});
+
+connection.config.queryFormat = function (query, values) {
+    if (!values) return query;
+    return query.replace(/\:(\w+)/g, function (txt, key) {
+        if (values.hasOwnProperty(key)) {
+            return this.escape(values[key]);
+        }
+        return txt;
+    }.bind(this));
+};
+
+app.get('/getUsersByName/:id/:name', function(req, res) {
+    connection.query(
+        "select * from user_1234 where firstName = :name and id = :id",
+        {
+            name: req.params.name,
+            id: req.params.id
+        },
         function(err, results, fields) {
             res.send(results);
         }
