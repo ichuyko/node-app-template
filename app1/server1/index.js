@@ -137,5 +137,15 @@ app.get('/getUserss', function(req, res) {
     );
 });
 
+app.get('/getUsersById/:id', function(req, res) {
+    connection.query(
+        "select * from user_1234 where id = ?",
+        [req.params.id],
+        function(err, results, fields) {
+            res.send(results);
+        }
+    );
+});
+
 
 app.listen(process.env.PORT || 8080, () => console.log(`Listening on port ${process.env.PORT || 8080}!`));
