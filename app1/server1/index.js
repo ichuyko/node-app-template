@@ -102,9 +102,20 @@ app.post('/deleteUser', function(req, res) {
             id: user.id
         }
     }).then(() => {
-        res.send(user);
-        res.send("Deleted!");
+        res.send(user + " Deleted!");
     });
+});
+
+app.post('/deleteUsers', function(req, res) {
+    var userIds = req.body;
+    userIds.forEach((id) => {
+        UserTable.destroy({
+            where: {
+                id: id
+            }
+        });
+    });
+    res.send("Next users will be deleted: " + userIds.join(","));
 });
 
 
