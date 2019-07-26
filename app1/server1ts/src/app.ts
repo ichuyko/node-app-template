@@ -47,7 +47,7 @@ const tableOptions = {
     // if you don't want that, set the following
     freezeTableName: true
 };
-const sequelize = new Sequelize('mysql://root:root@localhost:3306/sequelize');
+const sequelize = new Sequelize('mysql://root:rootroot@localhost:3306/sequelize');
 
 sequelize
     .authenticate()

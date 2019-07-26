@@ -1,4 +1,5 @@
 const express = require('express');
+const mysql = require("mysql2");
 var bodyParser = require('body-parser');
 
 const app = express();
@@ -29,57 +30,57 @@ app.get('/api/getUser3', (req, res) => {
 
 
 const Sequelize = require('sequelize');
-const sequelize = new Sequelize('mysql://root:root@localhost:3306/sequelize');
+// const sequelize = new Sequelize('mysql://root:root@localhost:3306/sequelize');
 
-sequelize
-    .authenticate()
-    .then(() => {
-    console.log('Connection has been established successfully.');
-})
-.catch(err => {
-    console.error('Unable to connect to the database:', err);
-});
+// sequelize
+//     .authenticate()
+//     .then(() => {
+//     console.log('Connection has been established successfully.');
+// })
+// .catch(err => {
+//     console.error('Unable to connect to the database:', err);
+// });
 
-const UserTable = sequelize.define('user', {
-    // attributes
-    id: {
-        primaryKey: true,
-        type: Sequelize.INTEGER,
-        allowNull: false,
-        autoIncrement: true
-    },
-    firstName: {
-        type: Sequelize.STRING,
-        allowNull: false
-    },
-    lastName: {
-        type: Sequelize.STRING
-        // allowNull defaults to true
-    }
-}, {
-    // don't add the timestamp attributes (updatedAt, createdAt)
-    timestamps: true,
+// const UserTable = sequelize.define('user', {
+//     // attributes
+//     id: {
+//         primaryKey: true,
+//         type: Sequelize.INTEGER,
+//         allowNull: false,
+//         autoIncrement: true
+//     },
+//     firstName: {
+//         type: Sequelize.STRING,
+//         allowNull: false
+//     },
+//     lastName: {
+//         type: Sequelize.STRING
+//         // allowNull defaults to true
+//     }
+// }, {
+//     // don't add the timestamp attributes (updatedAt, createdAt)
+//     timestamps: true,
+//
+//     // don't delete database entries but set the newly added attribute deletedAt
+//     // to the current date (when deletion was done). paranoid will only work if
+//     // timestamps are enabled
+//     paranoid: true,
+//
+//     // don't use camelcase for automatically added attributes but underscore style
+//     // so updatedAt will be updated_at
+//     underscored: false,
+//
+//     // disable the modification of tablenames; By default, sequelize will automatically
+//     // transform all passed model names (first parameter of define) into plural.
+//     // if you don't want that, set the following
+//     freezeTableName: true,
+//
+//     tableName: 'user_' + userId
+// });
 
-    // don't delete database entries but set the newly added attribute deletedAt
-    // to the current date (when deletion was done). paranoid will only work if
-    // timestamps are enabled
-    paranoid: true,
-
-    // don't use camelcase for automatically added attributes but underscore style
-    // so updatedAt will be updated_at
-    underscored: false,
-
-    // disable the modification of tablenames; By default, sequelize will automatically
-    // transform all passed model names (first parameter of define) into plural.
-    // if you don't want that, set the following
-    freezeTableName: true,
-
-    tableName: 'user_' + userId
-});
-
-UserTable.sync({ force: false }).then((res) => {
-    console.log('Table for user: ' + res.tableName);
-});
+// UserTable.sync({ force: false }).then((res) => {
+//     console.log('Table for user: ' + res.tableName);
+// });
 
 app.post('/addUser', function(req, res) {
     var user = req.body;
@@ -115,6 +116,25 @@ app.post('/deleteUsers', function(req, res) {
         });
     });
     res.send("Next users will be deleted: " + userIds.join(","));
+});
+
+
+var connection = mysql.createConnection({
+    host: 'localhost',
+    user: 'root',
+    password: 'rootroot',
+    database: 'sequelize'
+});
+
+connection.connect();
+
+app.get('/getUserss', function(req, res) {
+    connection.query(
+        'select * from user_1234 where deletedAt is NULL',
+        function(err, results, fields) {
+            res.send(results);
+        }
+    );
 });
 
 
