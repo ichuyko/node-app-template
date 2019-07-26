@@ -1,14 +1,13 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import logo from "./logo.svg";
+import React from "react";
 import {User} from "../../shared/User";
-import {stringify} from "querystring";
 
-interface Props {
+interface State {
     user: User;
 }
 
-interface State {
+interface Props {
     user: User;
 }
 
@@ -47,16 +46,8 @@ export default class App extends React.Component<Props, State> {
                 <header className="App-header">
                     <img src={logo} className="App-logo" alt="logo"/>
                     <p>
-                        Edit <code>src/App.tsx</code> and save to reload.
+                        User: {JSON.stringify(this.state.user.name ? this.state.user : this.props.user)}
                     </p>
-                    <a
-                        className="App-link"
-                        href="https://reactjs.org"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                    >
-                        Learn React, user: {JSON.stringify(this.state.user.name ? this.state.user: this.props.user)}
-                    </a>
                     <div onClick={this.getUser}>getUser</div>
                     <div onClick={this.getUser2}>getUser2</div>
                     <div onClick={this.getUser3}>getUser3</div>
