@@ -1,7 +1,7 @@
 import bodyParser from "body-parser";
 import express from "express";
 import {Request, Response} from "express";
-import mysql, {Connection} from "mysql";
+import mysql, {Connection, FieldInfo, MysqlError} from "mysql";
 import {Login} from "../../shared/Login";
 import {User} from "../../shared/User";
 
@@ -40,8 +40,9 @@ app.get("/getUserss", function(req, res) {
     connection.query (
         "select * from ?? where deletedAt is NULL", [`user_${userId}`],
         // "select * from user_1234 where deletedAt is NULL",
-        function(err, results, fields) {
+        function(err: MysqlError | null, results: User[], fields: FieldInfo[] | undefined) {
             res.send(results);
+            // res.send(results.map((user: User) => user.id).join(", "));
         }
     );
 });
