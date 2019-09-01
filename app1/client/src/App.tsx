@@ -2,9 +2,11 @@ import "./App.css";
 import logo from "./logo.svg";
 import React from "react";
 import {User} from "../../shared/User";
+import Icofont from "react-icofont";
 
 interface State {
     user: User;
+    spin: boolean;
 }
 
 interface Props {
@@ -12,7 +14,7 @@ interface Props {
 }
 
 export default class App extends React.Component<Props, State> {
-    state = {user: {} as User};
+    state = {user: {} as User, spin: false};
 
     getUser = () => {
         fetch("/api/getUser")
@@ -38,6 +40,8 @@ export default class App extends React.Component<Props, State> {
             .then((user: User) => {
                 this.setState({user});
             });
+
+        // const c: Icofont = new Icofont();
     };
 
     render() {
@@ -52,6 +56,13 @@ export default class App extends React.Component<Props, State> {
                     <div onClick={this.getUser2}>getUser2</div>
                     <div onClick={this.getUser3}>getUser3</div>
                 </header>
+                <button onClick={() => this.setState({spin: true})} title="Start spin" />
+                <button onClick={() => this.setState({spin: false})} title="Stop spin" />
+                <Icofont icon="key" rotate="270" flip="h" size="10"/>
+                <Icofont icon="dart" size="10" />
+                <Icofont icon="dart" size="10" spin={this.state.spin} />
+                <Icofont icon="dart" size="10" flip={"v"} rotate={"270"} />
+                <Icofont icon="spinner-alt-4" size="3" spin={true}/>
             </div>
         );
 
