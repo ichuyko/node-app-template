@@ -2,7 +2,7 @@ import "./App.css";
 import logo from "./logo.svg";
 import React from "react";
 import {User} from "../../shared/User";
-import Icofont from "react-icofont";
+import Icofont from "./react-icofont";
 
 interface State {
     user: User;
