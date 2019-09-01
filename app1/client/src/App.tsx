@@ -2,7 +2,7 @@ import "./App.css";
 import logo from "./logo.svg";
 import React from "react";
 import {User} from "../../shared/User";
-import Icofont from "./react-icofont";
+import Icofont from "react-icofont";
 
 interface State {
     user: User;
@@ -59,8 +59,8 @@ export default class App extends React.Component<Props, State> {
                 <button onClick={() => this.setState({spin: true})} title="Start spin" />
                 <button onClick={() => this.setState({spin: false})} title="Stop spin" />
                 <Icofont icon="key" rotate="270" flip="h" size="10"/>
-                <Icofont icon="dart" size="10" />
-                <Icofont icon="dart" size="10" spin={this.state.spin} />
+                <Icofont icon="dart" size="3" />
+                <Icofont icon="dart" size="5" spin={this.state.spin} />
                 <Icofont icon="dart" size="10" flip={"v"} rotate={"270"} />
                 <Icofont icon="spinner-alt-4" size="3" spin={true}/>
             </div>
