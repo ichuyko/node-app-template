@@ -1,5 +1,5 @@
-// Type definitions for react-icofont 1.0
-// Project: https://github.com/theanam/react-icofont
+// Type definitions for react-icofont 10.0
+// Project: https://www.npmjs.com/package/react-icofont
 // Definitions by: Ivan Chuyko <https://github.com/ichuyko>
 // Definitions: https://github.com/DefinitelyTyped/DefinitelyTyped
 // TypeScript Version: 2.8
@@ -10,15 +10,12 @@ import Icofont = ReactIcofont.Icofont;
 export default Icofont;
 
 declare namespace ReactIcofont {
-    type Rotate = "90" | "180" | "270";
-    type Flip = "h" | "v";
-    type Size = "1" | "2" | "3" | "4" | "5" | "6" | "7" | "8" | "9" | "10" ;
     interface IcofontProps {
-        flip?: Flip;
         icon: string;
-        size?: Size;
         spin?: boolean;
-        rotate?: Rotate;
+        flip?: "h" | "v";
+        rotate?: "90" | "180" | "270";
+        size?: "1" | "2" | "3" | "4" | "5" | "6" | "7" | "8" | "9" | "10";
         className?: string;
     }
 
