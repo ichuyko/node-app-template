@@ -10,7 +10,7 @@
     "@types/react-dom": "16.8.4",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
-    "react-icofont": "1.0.10",
+    "react-icofont": "1.0.12",
     "react-scripts": "3.0.1",
     "tslint": "^5.18.0",
     "typescript": "3.5.2"
