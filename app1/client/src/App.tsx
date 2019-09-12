@@ -1,12 +1,12 @@
 import "./App.css";
-import logo from "./logo.svg";
 import React from "react";
 import {User} from "../../shared/User";
 import Icofont from "react-icofont";
+import logo from "./logo.svg";
 
 interface State {
-    user: User;
     spin: boolean;
+    user: User;
 }
 
 interface Props {
@@ -40,8 +40,6 @@ export default class App extends React.Component<Props, State> {
             .then((user: User) => {
                 this.setState({user});
             });
-
-        // const c: Icofont = new Icofont();
     };
 
     render() {
