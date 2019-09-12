@@ -45,7 +45,7 @@ export default class App extends React.Component<Props, State> {
     render() {
         return (
             <div className="App">
-                <header className="App-header">
+                <header>
                     <img src={logo} className="App-logo" alt="logo"/>
                     <p>
                         User: {JSON.stringify(this.state.user.name ? this.state.user : this.props.user)}
@@ -54,9 +54,12 @@ export default class App extends React.Component<Props, State> {
                     <div onClick={this.getUser2}>getUser2</div>
                     <div onClick={this.getUser3}>getUser3</div>
                 </header>
-                <button onClick={() => this.setState({spin: true})} title="Start spin" />
-                <button onClick={() => this.setState({spin: false})} title="Stop spin" />
-                <Icofont icon="key" rotate="270" flip="h" size="10"/>
+                <button onClick={() => this.setState({spin: true})}>Start spin</button>
+                <button onClick={() => this.setState({spin: false})}>Stop spin</button>
+                <br/>
+                <Icofont icon="key" rotate="270" flip="h"/>
+                <Icofont icon="key" rotate="270" flip="h" size="1"/>
+                <Icofont icon="key" rotate="270" flip="h" size="2"/>
                 <Icofont icon="dart" size="3" />
                 <Icofont icon="dart" size="5" spin={this.state.spin} />
                 <Icofont icon="dart" size="10" flip={"v"} rotate={"270"} />
