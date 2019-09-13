@@ -1,11 +1,10 @@
 import "./App.css";
 import React from "react";
-import Icofont from "react-icofont";
 import logo from "./logo.svg";
 import {User} from "shared/src/User";
+import {Button} from "antd";
 
 interface State {
-    spin: boolean;
     user: User;
 }
 
@@ -54,16 +53,7 @@ export default class App extends React.Component<Props, State> {
                     <div onClick={this.getUser2}>getUser2</div>
                     <div onClick={this.getUser3}>getUser3</div>
                 </header>
-                <button onClick={() => this.setState({spin: true})}>Start spin</button>
-                <button onClick={() => this.setState({spin: false})}>Stop spin</button>
-                <br/>
-                <Icofont icon="key" rotate="270" flip="h"/>
-                <Icofont icon="key" rotate="270" flip="h" size="1"/>
-                <Icofont icon="key" rotate="270" flip="h" size="2"/>
-                <Icofont icon="dart" size="3" />
-                <Icofont icon="dart" size="5" spin={this.state.spin} />
-                <Icofont icon="dart" size="10" flip={"v"} rotate={"270"} />
-                <Icofont icon="spinner-alt-4" size="3" spin={true}/>
+                <Button>antd button</Button>
             </div>
         );
 

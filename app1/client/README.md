@@ -45,3 +45,4 @@ To learn React, check out the [React documentation](https://reactjs.org/).
 
 ## TODO:
 npm add --save react-icofont @types/react-icofont
+npm add --save dotenv @types/dotenv
