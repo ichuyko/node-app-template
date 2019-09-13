@@ -1,8 +1,8 @@
 import "./App.css";
 import React from "react";
-import {User} from "../../shared/User";
 import Icofont from "react-icofont";
 import logo from "./logo.svg";
+import {User} from "../../shared/src/User";
 
 interface State {
     spin: boolean;

@@ -2,8 +2,8 @@ import bodyParser from "body-parser";
 import express from "express";
 import {Request, Response} from "express";
 import mysql, {Connection, FieldInfo, MysqlError} from "mysql";
-import {Login} from "../../shared/Login";
-import {User} from "../../shared/User";
+import {Login} from "../../shared/src/Login";
+import {User} from "../../shared/src/User";
 
 const app = express();
 app.use(bodyParser());
