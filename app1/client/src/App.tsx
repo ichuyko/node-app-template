@@ -13,7 +13,11 @@ interface Props {
 }
 
 export default class App extends React.Component<Props, State> {
-    state = {user: {} as User, spin: false};
+
+    constructor(props: Readonly<Props>) {
+        super(props);
+        this.state = {user: props.user};
+    }
 
     getUser = () => {
         fetch("/api/getUser")
@@ -47,7 +51,7 @@ export default class App extends React.Component<Props, State> {
                 <header>
                     <img src={logo} className="App-logo" alt="logo"/>
                     <p>
-                        User: {JSON.stringify(this.state.user.name ? this.state.user : this.props.user)}
+                        User from state: {JSON.stringify(this.state)}
                     </p>
                     <div onClick={this.getUser}>getUser</div>
                     <div onClick={this.getUser2}>getUser2</div>
