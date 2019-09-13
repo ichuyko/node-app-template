@@ -43,9 +43,5 @@ You can learn more in the [Create React App documentation](https://facebook.gith
 
 To learn React, check out the [React documentation](https://reactjs.org/).
 
-
-
-https://www.npmjs.com/package/dts-gen
-
-sudo npm install -g dts-gen
-dts-gen -m react-icofont
+## TODO:
+npm add --save react-icofont @types/react-icofont

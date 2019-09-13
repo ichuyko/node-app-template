@@ -6,10 +6,9 @@
   "dependencies": {
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
-    "react-icofont": "1.0.12",
     "react-scripts": "3.0.1",
-    "tslint": "^5.18.0",
-    "shared": "../shared/"
+    "shared": "../shared/",
+    "tslint": "^5.18.0"
   },
   "devDependencies": {
     "@types/jest": "24.0.15",
