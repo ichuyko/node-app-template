@@ -43,6 +43,14 @@ You can learn more in the [Create React App documentation](https://facebook.gith
 
 To learn React, check out the [React documentation](https://reactjs.org/).
 
+## Links
+   * [TypeSearch](https://microsoft.github.io/TypeSearch/)
+   * [npmjs.com](https://www.npmjs.com)
+
+## libs
+    npm i --save react-router @types/react-router
+    npm i --save react-router-dom @types/react-router-dom
+
 ## TODO:
-npm add --save react-icofont @types/react-icofont
-npm add --save dotenv @types/dotenv
+    npm i --save react-icofont @types/react-icofont
+    npm i --save dotenv @types/dotenv
