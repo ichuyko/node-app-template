@@ -1,0 +1,15 @@
+{
+  "name": "shared",
+  "version": "1.0.1",
+  "private": true,
+  "proxy": "http://localhost:8080",
+  "files": [
+    "src/"
+  ],
+  "dependencies": {
+    "tslint": "^5.18.0"
+  },
+  "devDependencies": {
+    "typescript": "3.5.2"
+  }
+}
