@@ -1,57 +1,17 @@
 import "./App.css";
 import React from "react";
-import logo from "./logo.svg";
-import {User} from "shared/src/User";
+import logo from "../assets/svg/logo.svg";
 import {Button} from "antd";
 import {Route, Router} from "react-router";
-import {RoutesURL} from "./route/Routes";
-import {createBrowserHistory}  from "history";
+import {createBrowserHistory} from "history";
 import Icon from "antd/lib/icon";
-import {URLProps} from "./route/URLParams";
-import LinkTo from "./route/LinkTo";
+import {RoutesURL} from "../routes/Routes";
+import LinkTo from "../routes/LinkTo";
+import URLRouteProps from "../routes/URLRouteProps";
 
-interface State {
-    user: User;
-}
-
-interface Props {
-    user: User;
-}
-
-export default class App extends React.Component<Props, State> {
+export default class App extends React.Component {
 
     private customHistory = createBrowserHistory();
-
-    constructor(props: Readonly<Props>) {
-        super(props);
-        this.state = {user: props.user};
-    }
-
-    getUser = () => {
-        fetch("/api/getUser")
-            .then(response => response.json())
-            .then((user: User) => {
-                this.setState({user});
-            });
-    };
-
-    getUser2 = () => {
-        fetch("/api/getUser2")
-            .then(response => response.json())
-            .then((user: User) => {
-                this.setState({user});
-            }).catch((error) => {
-            this.setState({user: {} as User});
-        });
-    };
-
-    getUser3 = () => {
-        fetch("/api/getUser3")
-            .then(response => response.json())
-            .then((user: User) => {
-                this.setState({user});
-            });
-    };
 
     render() {
         return (
@@ -59,12 +19,6 @@ export default class App extends React.Component<Props, State> {
                 <div className="App">
                     <header>
                         <img src={logo} className="App-logo" alt="logo"/>
-                        <p>
-                            User from state: {JSON.stringify(this.state)}
-                        </p>
-                        <span onClick={this.getUser}>getUser</span>
-                        <span onClick={this.getUser2}>getUser2</span>
-                        <span onClick={this.getUser3}>getUser3</span>
                         <p>
                             <LinkTo to={RoutesURL.HOME}><Icon type="home" /></LinkTo>
                             <LinkTo to={RoutesURL.USER_PROFILE} params={{userId: "2"}}><Icon type="user" /></LinkTo>
@@ -80,7 +34,7 @@ export default class App extends React.Component<Props, State> {
                             </div>
                         );
                     }}/>
-                    <Route exact path={RoutesURL.USER_PROFILE} render={(props: URLProps) => {
+                    <Route exact path={RoutesURL.USER_PROFILE} render={(props: URLRouteProps) => {
                         return (
                             <div>
                                 User profile
@@ -88,7 +42,7 @@ export default class App extends React.Component<Props, State> {
                             </div>
                         );
                     }}/>
-                    <Route exact path={RoutesURL.ACCOUNT_PROFILE} render={(props: URLProps) => {
+                    <Route exact path={RoutesURL.ACCOUNT_PROFILE} render={(props: URLRouteProps) => {
                         return (
                             <div>
                                 Account profile
@@ -99,6 +53,5 @@ export default class App extends React.Component<Props, State> {
                 </div>
             </Router>
         );
-
     }
 }

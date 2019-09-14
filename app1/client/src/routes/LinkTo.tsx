@@ -1,7 +1,7 @@
 import React from "react";
-import {URLParams} from "./URLParams";
 import {Link} from "react-router-dom";
 import {RoutesURL} from "./Routes";
+import URLParams from "./URLParams";
 
 interface Props {
     to: RoutesURL;
