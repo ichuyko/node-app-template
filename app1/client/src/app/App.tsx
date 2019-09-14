@@ -8,6 +8,7 @@ import Icon from "antd/lib/icon";
 import {RoutesURL} from "../routes/Routes";
 import LinkTo from "../routes/LinkTo";
 import URLRouteProps from "../routes/URLRouteProps";
+import LoginPageController from "../pages/login/LoginPageController";
 
 export default class App extends React.Component {
 
@@ -23,6 +24,7 @@ export default class App extends React.Component {
                             <LinkTo to={RoutesURL.HOME}><Icon type="home" /></LinkTo>
                             <LinkTo to={RoutesURL.USER_PROFILE} params={{userId: "2"}}><Icon type="user" /></LinkTo>
                             <LinkTo to={RoutesURL.ACCOUNT_PROFILE} params={{userId: "2", accountId: "3"}}><Icon type="bank" /></LinkTo>
+                            <LinkTo to={RoutesURL.LOGIN}><Icon type="bank" />Login</LinkTo>
                         </p>
                     </header>
                     <Button>antd button</Button>
@@ -50,6 +52,7 @@ export default class App extends React.Component {
                             </div>
                         );
                     }}/>
+                    <Route exact path={RoutesURL.LOGIN} component={LoginPageController} />
                 </div>
             </Router>
         );
