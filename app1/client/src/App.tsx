@@ -3,11 +3,12 @@ import React from "react";
 import logo from "./logo.svg";
 import {User} from "shared/src/User";
 import {Button} from "antd";
-import {Route, RouteComponentProps, RouteProps, Router} from "react-router";
+import {Route, Router} from "react-router";
 import {RoutesURL} from "./route/Routes";
 import {createBrowserHistory}  from "history";
-import {Link} from "react-router-dom";
 import Icon from "antd/lib/icon";
+import {URLProps} from "./route/URLParams";
+import LinkTo from "./route/LinkTo";
 
 interface State {
     user: User;
@@ -65,9 +66,9 @@ export default class App extends React.Component<Props, State> {
                         <span onClick={this.getUser2}>getUser2</span>
                         <span onClick={this.getUser3}>getUser3</span>
                         <p>
-                            <Link to={RoutesURL.HOME}><Icon type="home" /></Link>
-                            <Link to={RoutesURL.USER_PROFILE}><Icon type="user" /></Link>
-                            <Link to={RoutesURL.ACCOUNT_PROFILE}><Icon type="bank" /></Link>
+                            <LinkTo to={RoutesURL.HOME}><Icon type="home" /></LinkTo>
+                            <LinkTo to={RoutesURL.USER_PROFILE} params={{userId: "2"}}><Icon type="user" /></LinkTo>
+                            <LinkTo to={RoutesURL.ACCOUNT_PROFILE} params={{userId: "2", accountId: "3"}}><Icon type="bank" /></LinkTo>
                         </p>
                     </header>
                     <Button>antd button</Button>
@@ -79,18 +80,19 @@ export default class App extends React.Component<Props, State> {
                             </div>
                         );
                     }}/>
-                    <Route exact path={RoutesURL.USER_PROFILE} render={(props: RouteComponentProps) => {
+                    <Route exact path={RoutesURL.USER_PROFILE} render={(props: URLProps) => {
                         return (
                             <div>
                                 User profile
-                                {JSON.stringify(props.match.params)}
+                                {JSON.stringify(props.match.params.userId)}
                             </div>
                         );
                     }}/>
-                    <Route exact path={RoutesURL.ACCOUNT_PROFILE} render={() => {
+                    <Route exact path={RoutesURL.ACCOUNT_PROFILE} render={(props: URLProps) => {
                         return (
                             <div>
                                 Account profile
+                                {JSON.stringify(props.match.params)}
                             </div>
                         );
                     }}/>
