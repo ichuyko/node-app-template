@@ -7,6 +7,7 @@ import {RoutesURL} from "../routes/Routes";
 import URLRouteProps from "../routes/URLRouteProps";
 import LoginPageController from "../pages/login/LoginPageController";
 import HeaderController from "../header/HeaderController";
+import "./style/app.scss"
 
 export default class App extends React.Component {
 
