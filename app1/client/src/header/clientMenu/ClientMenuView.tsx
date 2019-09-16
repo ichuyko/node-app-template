@@ -9,7 +9,9 @@ export default class ClientMenuView extends React.Component{
         return (
             <div className="client-menu">
                 <div className="logo">
-                    <span>LOGO</span>
+                    <LinkTo to={RoutesURL.HOME}>
+                        <span>LOGO</span>
+                    </LinkTo>
                 </div>
                 <div className="menu-items">
                     <div className="menu-item">

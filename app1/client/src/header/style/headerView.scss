@@ -2,7 +2,7 @@
 
 .fm-logo {
     animation: logo-spin infinite 5s linear;
-    height: 20px;
+    width: 35px;
     pointer-events: none;
 }
 
@@ -28,11 +28,12 @@
     }
 
     & .logo {
-        width: 180px;
         background-color: coral;
+        white-space: nowrap;
+        font-size: 25px;
     }
     & .menu-items {
-        background-color: red;
+        background-color: #ffe513;
         width: 100%;
     }
     & .client {
@@ -54,16 +55,17 @@
     }
 
     & .logo {
-        width: 140px;
-        background-color: coral;
+        min-width: 100px;
+        background-color: rgba(255, 131, 76, 0.51);
+        white-space: nowrap;
     }
     & .menu-items {
-        background-color: red;
+        background-color: rgba(255, 235, 20, 0.52);
         width: 100%;
     }
     & .search {
         width: 120px;
-        background-color: green;
+        background-color: rgba(0, 128, 0, 0.52);
     }
 }
 
