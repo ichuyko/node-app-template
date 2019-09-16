@@ -43,6 +43,9 @@ You can learn more in the [Create React App documentation](https://facebook.gith
 
 To learn React, check out the [React documentation](https://reactjs.org/).
 
+## Docs
+   * [react-router](https://reacttraining.com/react-router/core/api/generatePath)
+   
 ## Links
    * [TypeSearch](https://microsoft.github.io/TypeSearch/)
    * [npmjs.com](https://www.npmjs.com)

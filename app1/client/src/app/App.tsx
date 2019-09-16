@@ -20,7 +20,6 @@ export default class App extends React.Component {
                     <header>
                         <Route path={RoutesURL.HOME} component={HeaderController}/>
                     </header>
-                    <Button>antd button</Button>
                     <Route exact path={RoutesURL.HOME} render={() => {
                         return (
                             <div>
