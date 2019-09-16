@@ -16,9 +16,7 @@ export default class App extends React.Component {
         return (
             <Router history={this.customHistory}>
                 <div className="main">
-                    <header>
-                        <Route path={RoutesURL.HOME} component={HeaderController}/>
-                    </header>
+                    <Route path={RoutesURL.HOME} component={HeaderController}/>
                     <Route exact path={RoutesURL.HOME} render={() => {
                         return (
                             <div>

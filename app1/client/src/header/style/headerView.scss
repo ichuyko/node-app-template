@@ -1,10 +1,9 @@
 @import "../../common/style/variables";
 
-.logo {
+.fm-logo {
     animation: logo-spin infinite 5s linear;
     height: 20px;
     pointer-events: none;
-    border: $primaryTextColor 1px solid;
 }
 
 @keyframes logo-spin {
@@ -15,3 +14,56 @@
         transform: rotate(360deg);
     }
 }
+
+.fm-menu {
+    background: $fmMenuBG;
+    color: $menuTextColor;
+    height: $menuHeight;
+
+    display: flex;
+    flex: 0 1 auto;
+
+    & div {
+        display: flex;
+    }
+
+    & .logo {
+        width: 180px;
+        background-color: coral;
+    }
+    & .menu-items {
+        background-color: red;
+        width: 100%;
+    }
+    & .client {
+        width: 180px;
+        background-color: green;
+    }
+}
+
+.client-menu {
+    background: $clientMenuBG;
+    color: $menuTextColor;
+    height: $menuHeight;
+
+    display: flex;
+    flex: 0 1 auto;
+
+    & div {
+        display: flex;
+    }
+
+    & .logo {
+        width: 140px;
+        background-color: coral;
+    }
+    & .menu-items {
+        background-color: red;
+        width: 100%;
+    }
+    & .search {
+        width: 120px;
+        background-color: green;
+    }
+}
+
