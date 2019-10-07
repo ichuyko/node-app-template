@@ -2,6 +2,7 @@ import "./App.css";
 import "./style/app.scss"
 import React from "react";
 import {User} from "shared/src/types/User";
+import {isAdmin} from "./common/LoginUtils";
 
 interface Props {
 
@@ -17,7 +18,7 @@ export default class App extends React.Component<Props, State> {
     getUser = (e: any) => {
         e.preventDefault();
         fetch("/api/getUser").then(response => response.json()).then((user: User) => {
-            this.setState({result: `id: ${user.id}, name: ${user.name}`});
+            this.setState({result: `id: ${user.id}, name: ${user.name}. isAdmin: ${isAdmin(user)}`});
         });
     };
 
