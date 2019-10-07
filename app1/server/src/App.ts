@@ -1,6 +1,6 @@
 import {Request, Response} from "express";
 import express from "express";
-import {User} from "shared/src/User";
+import {User} from "shared/src/types/User";
 
 const app = express();
 app.use(express.json());

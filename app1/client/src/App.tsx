@@ -1,7 +1,7 @@
 import "./App.css";
 import "./style/app.scss"
 import React from "react";
-import {User} from "shared/src/User";
+import {User} from "shared/src/types/User";
 
 interface Props {
 
