@@ -1,9 +1,12 @@
 # node-app-template
 
-ALTER USER 'root'@'localhost' IDENTIFIED BY 'rootroot';
-ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY 'rootroot'
+Client and Server Typescript projects with shared library:
 
+    * Client: react app
+    * Server: Simple nodejs app: express
+    * Shared: Shared ts interfaces and utils   
 
-SELECT user,authentication_string,plugin,host FROM mysql.user;
-ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY 'rootroot';
-FLUSH PRIVILEGES;
+## How to build & run
+
+    1. client: npm run build
+    2. server: npm start

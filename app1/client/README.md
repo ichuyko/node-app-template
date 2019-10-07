@@ -42,19 +42,3 @@ You don’t have to ever use `eject`. The curated feature set is suitable for sm
 You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
 To learn React, check out the [React documentation](https://reactjs.org/).
-
-## Docs
-   * [react-router](https://reacttraining.com/react-router/core/api/generatePath)
-   
-## Links
-   * [TypeSearch](https://microsoft.github.io/TypeSearch/)
-   * [npmjs.com](https://www.npmjs.com)
-   * [regex101](https://regex101.com/)
-
-## libs
-    npm i --save react-router @types/react-router
-    npm i --save react-router-dom @types/react-router-dom
-
-## TODO:
-    npm i --save react-icofont @types/react-icofont
-    npm i --save dotenv @types/dotenv
