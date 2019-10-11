@@ -74,3 +74,8 @@ Run `nx dep-graph` to see a diagram of the dependencies of your projects.
 ## Further help
 
 Visit the [Nx Documentation](https://nx.dev) to learn more.
+
+
+
+### install nx
+    "yarn global add @nrwl/cli" or "npm install -g @nrwl/cli"
