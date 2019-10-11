@@ -1,0 +1,30 @@
+{
+  "npmScope": "fm-workspace",
+  "implicitDependencies": {
+    "workspace.json": "*",
+    "package.json": "*",
+    "tsconfig.json": "*",
+    "tslint.json": "*",
+    "nx.json": "*"
+  },
+  "projects": {
+    "my-react": {
+      "tags": []
+    },
+    "my-react-e2e": {
+      "tags": []
+    },
+    "my-lib": {
+      "tags": []
+    },
+    "my-app": {
+      "tags": []
+    },
+    "my-app-e2e": {
+      "tags": []
+    },
+    "my-node-lib": {
+      "tags": []
+    }
+  }
+}
