@@ -29,6 +29,7 @@ export const App = () => {
         <p>Thank you for using and showing some ♥ for Nx.</p>
         <p>isPost: {isPost(post).toString()}</p>
         <p>isAdmin: {isAdmin(user).toString()}</p>
+        <p>post: {JSON.stringify(post)}</p>
         <div className="flex github-star-container">
           <a
             href="https://github.com/nrwl/nx"
